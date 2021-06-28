@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<title>Board Game</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<style>
+		.logo{font-family: cursive; text-align: center; text-shadow:0px 0px 22px 0px #000000; }
+		.main{display: flex; flex-direction: row; flex-wrap: wrap; background-color: #e8505b;margin: 50px 499px;}
+		.container{background:#cecece; height:100px; width:100px;margin: 16px;font-size: 70px;}
+		.borderColor{border: 5px solid yellow;}
+		.btn{text-align: center;font-size: 16px; margin:10px 75px;padding: 5px;}
+		.hidden{display:none;}
+		.box{background:green;}
+	</style>
+</head>
+<body>
+<div id="app">
+
+	<h1 v-bind:class="[logo]">{{message}}</h1>
+	<div v-bind:class="[main_container]">
+		<div v-bind:class="[loadClass,highlight]">{{box1}}
+		</div>
+	<div v-bind:class="[loadClass,highlight]">{{box2}}</div>
+	<div v-bind:class="[loadClass,highlight]">{{box3}}</div>
+	<div v-bind:class="[loadClass,highlight]">{{box4}}</div>
+	<div v-bind:class="[loadClass,highlight]">{{box5}}</div>
+	<div v-bind:class="[loadClass,highlight]">{{box6}}</div>
+	</div>
+	<div v-bind:class="[main_container]">
+	<div v-bind:class="[loadClass,highlight,]" v-on:click="show_random7();">{{box7}}</div>
+	<div v-bind:class="[loadClass,highlight]" v-on:click="show_random8();">{{box8}}</div>
+	<div v-bind:class="[loadClass,highlight]" v-on:click="show_random9();">{{box9}}</div>
+	<div v-bind:class="[loadClass,highlight]" v-on:click="show_random10();">{{box10}}</div>
+	<div v-bind:class="[loadClass,highlight]" v-on:click="show_random11();">{{box11}}</div>
+	<div v-bind:class="[loadClass,highlight]" v-on:click="show_random12();">{{box12}}</div>
+	<div class="button">
+		<button v-bind:class="btn">Click on box to see matching number</button>
+	</div>
+    <div>{{compare}}</div>
+	</div>
+
+</div>
+
+<script>
+	var app = new Vue({
+		el: '#app',
+		data:{
+			message: 'Number Match',
+			logo: 'logo',
+			main_container:'main',
+			loadClass : 'container',
+			highlight : 'borderColor',
+			boxHidden : true,
+			box:'box',
+			btn:'btn',
+			box1:'6',
+			box2:'4',
+			box3:'3',
+			box4:'1',
+			box5:'5',
+			box6:'2',
+			box7:'',
+			box8:'',
+			box9:'',
+			box10:'',
+			box11:'',
+			box12:'',
+			score:0,
+		},
+		methods:{
+			show_random7 : function(){
+				this.box7= Math.floor(Math.random() * 6) + 1;
+			},
+			show_random8 : function(){
+				this.box8= Math.floor(Math.random() * 6) + 1;
+			},
+			show_random9 : function(){
+				this.box9= Math.floor(Math.random() * 6) + 1;
+			},
+			show_random10 : function(){
+				this.box10= Math.floor(Math.random() * 6) + 1;
+			},
+			show_random11 : function(){
+				this.box11= Math.floor(Math.random() * 6) + 1;
+			},
+			show_random12 : function(){
+				this.box12= Math.floor(Math.random() * 6) + 1;
+			},
+		}
+	});
+
+</script>
+</body>
+</html>

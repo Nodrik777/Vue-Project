@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Intro to v-bind</title>
+		<meta charset="UTF-8">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<style>
+			.logo{font-family: cursive; text-align: center; text-shadow:0px 0px 22px 0px #000000; }
+			.main{display: flex; flex-direction: row; flex-wrap: wrap; background-color: #e8505b;margin: 100px 425px;}
+			.container{background:#cecece; height:100px; width:100px;margin: 16px;font-size: 70px;text-align: center;}
+			.borderColor{border: 5px solid yellow;}
+			.dice{background-color: white;color: black; font-size: 2rem; width: 60%; height: 60%;margin-top: 20%; margin-left: 20%;text-align: center;border-radius: 10px;box-shadow:0px 0px 22px 0px #000000; }
+			.btn{text-align: center;font-size: 16px; margin:20px;padding: 5px;}
+			.players{display: flex;margin: 0 170px;}
+		</style>
+	</head>
+	<body>
+
+	<div id="app" class="all">
+
+		<h1 v-bind:class="[logo]">{{message}}</h1>
+		<div v-bind:class="[main_container]">
+			<div v-bind:class="[loadClass,highlight]" >{{box1}}</div>
+			<div v-bind:class="[loadClass,highlight]" >{{box2}}</div>
+			<div v-bind:class="[loadClass,highlight]" >{{box3}}</div>
+			<div v-bind:class="[loadClass,highlight]" >{{box4}}</div>
+			<div v-bind:class="[loadClass,highlight]" >{{box5}}</div>
+			<div v-bind:class="[loadClass,highlight]" >{{box6}}</div>
+			<div v-bind:class="[loadClass,highlight]" >{{box7}}</div>
+			<div v-bind:class="[loadClass,highlight]" >{{box8}}</div>
+			<div v-bind:class="[loadClass,highlight]" >{{box9}}</div>
+			<div v-bind:class="[loadClass,highlight]" >{{box10}}</div>
+			<div v-bind:class="[loadClass,highlight]" >{{box11}}</div>
+			<div v-bind:class="[loadClass,highlight]" >{{box12}}</div>
+			<div class="button">
+				<button  v-on:click="refresh();">Player 1</button>
+				<button  v-on:click="compare();">Player 2</button>
+			</div>
+		</div>
+	</div>
+	<script>
+	var app = new Vue({
+		//Bind Vue object to HTML element through query selector
+		el: '#app',
+		data:{
+			message: 'Number Match',
+			logo: 'logo',
+			main_container:'main',
+			loadClass : 'container',
+			highlight : 'borderColor',
+			box1:0,
+			box2:0,
+			box3:0,
+			box4:0,
+			box5:0,
+			box6:0,
+			box7:0,
+			box8:0,
+			box9:0,
+			box10:0,
+			box11:0,
+			box12:0,
+		}
+	});
+	</script>
+	</body>
+</html>
